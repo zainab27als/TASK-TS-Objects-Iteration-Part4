@@ -16,13 +16,13 @@ describe("Car Data Functions", () => {
       { id: 402, make: "Honda", model: "Civic", year: 2020, color: "Silver" },
       { id: 403, make: "Ford", model: "Mustang", year: 2019, color: "Red" },
       {
-        id: 404,
+        id: 405,
         make: "Chevrolet",
         model: "Tahoe",
         year: 2022,
         color: "Black",
       },
-      { id: 405, make: "Nissan", model: "Altima", year: 2020, color: "White" },
+      { id: 406, make: "Nissan", model: "Altima", year: 2020, color: "White" },
     ];
   });
 
@@ -53,13 +53,15 @@ describe("Car Data Functions", () => {
   describe("addCar", () => {
     it("should add a new car to the array and return the updated array, with the new car as the last element", () => {
       const newCar = {
-        id: 406,
+        id: 407,
         make: "Kia",
         model: "Sorento",
         year: 2021,
         color: "Green",
       };
-      const updatedCars = addCar([...cars], newCar);
+
+      const { id, make, model, year, color } = newCar;
+      const updatedCars = addCar([...cars], id, make, model, year, color);
       expect(updatedCars).toContainEqual(newCar);
       expect(updatedCars.length).toBe(cars.length + 1);
       1;
@@ -75,8 +77,8 @@ describe("Car Data Functions", () => {
 
   describe("removeCarById", () => {
     it("should remove a car by id and return the updated array without the car", () => {
-      const updatedCars = removeCarById([...cars], 404);
-      expect(updatedCars.some((car) => car.id === 404)).toBe(false);
+      const updatedCars = removeCarById([...cars], 405);
+      expect(updatedCars.some((car) => car.id === 405)).toBe(false);
       expect(updatedCars.length).toBe(cars.length - 1);
     });
   });
@@ -87,7 +89,7 @@ describe("Car Data Functions", () => {
       expect(updatedCar.color).toBe("Yellow");
     });
     it("should return 'No Car Found' if no car with the given id exists", () => {
-      expect(updateCarColor(cars, 999, "Yellow")).toBe("No Car Found");
+      expect(updateCarColor(cars, 404, "Yellow")).toBe("No Car Found");
     });
   });
 });

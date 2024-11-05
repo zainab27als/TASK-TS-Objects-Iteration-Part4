@@ -48,11 +48,11 @@ function isCarColorMatching(car, color) {
 }
 // console.log(isCarColorMatching(cars[1], "Blue")); // Outputs: false
 
-// 3) Using `addCar` function that accepts an array of car objects `cars` and `car` object, add the new car to the array of cars, and return the updated array
-function addCar(cars, car) {
+// 3) Using `addCar` function that accepts an array of car objects `cars` and the properties of a car,  create a new car object and add it to the array of cars, and return the updated array
+function addCar(cars, id, make, model, year, color) {
   // write your code here...
 }
-// console.log(addCar(cars, { id: 406, make: "Kia", model: "Sorento", year: 2021, color: "Green" }));
+// console.log(addCar(cars, 406, "Kia", "Sorento", 2021, "Green"));
 
 // 4) Using `countCarsMadeInYear` function that accepts an array cars objects `cars` and a manufacturing year `year` in numbers, return the number of cars made in the specified year
 function countCarsMadeInYear(cars, year) {
