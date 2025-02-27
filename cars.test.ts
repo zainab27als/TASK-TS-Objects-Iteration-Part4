@@ -1,14 +1,15 @@
-const {
-  getCarMake,
-  isCarColorMatching,
+import {
+  Car,
   addCar,
   countCarsMadeInYear,
+  getCarMake,
+  isCarColorMatching,
   removeCarById,
   updateCarColor,
-} = require("./objectIteration");
+} from "./cars";
 
 describe("Car Data Functions", () => {
-  let cars;
+  let cars: Car[];
 
   beforeEach(() => {
     cars = [
@@ -37,16 +38,12 @@ describe("Car Data Functions", () => {
 
   describe("isCarColorMatching", () => {
     it("should return true if car color matches the provided color", () => {
-      expect(isCarColorMatching(cars[0], "Blue")).toBe(true);
+      for (let car of cars)
+        expect(isCarColorMatching(car, car.color)).toBe(true);
     });
     it("should return false if car color does not match the provided color", () => {
-      expect(isCarColorMatching(cars[0], "Red")).toBe(false);
-    });
-    it("should return true if car color matches the provided color", () => {
-      expect(isCarColorMatching(cars[2], "Blue")).toBe(false);
-    });
-    it("should return false if car color does not match the provided color", () => {
-      expect(isCarColorMatching(cars[2], "Red")).toBe(true);
+      for (let car of cars)
+        expect(isCarColorMatching(car, "Magenta")).toBe(false);
     });
   });
 
