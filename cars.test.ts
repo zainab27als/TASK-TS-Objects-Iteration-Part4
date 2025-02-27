@@ -8,7 +8,7 @@ import {
   updateCarColor,
 } from "./cars";
 
-describe("Car Data Functions", () => {
+describe("Cars", () => {
   let cars: Car[];
 
   beforeEach(() => {
