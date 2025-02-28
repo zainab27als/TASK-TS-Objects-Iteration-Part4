@@ -6,7 +6,7 @@ import {
   isCarColorMatching,
   removeCarById,
   updateCarColor,
-} from "./cars";
+} from "../cars";
 
 describe("Cars", () => {
   let cars: Car[];
