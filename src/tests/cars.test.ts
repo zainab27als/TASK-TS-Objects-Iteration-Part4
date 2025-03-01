@@ -83,13 +83,14 @@ describe("Cars", () => {
   describe("updateCarColor", () => {
     it("should update the color of the car with the given id and return the updated car", () => {
       const updatedCar = updateCarColor([...cars], 401, "Yellow");
-  
+
       if (typeof updatedCar === "string") {
         throw new Error("Expected a Car object but got a string");
       }
 
       expect(updatedCar.color).toBe("Yellow");
     });
+
     it("should return 'No Car Found' if no car with the given id exists", () => {
       expect(updateCarColor(cars, 404, "Yellow")).toBe("No Car Found");
     });
