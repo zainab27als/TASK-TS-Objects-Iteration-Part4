@@ -1,3 +1,4 @@
+// don't change this interface
 interface Car {
   id: number;
   make: string;
@@ -48,21 +49,53 @@ const cars: Car[] = [
   },
 ];
 
-// 1) Write a `getCarMake` function that accepts a `car` object, return the make (brand) of the car
+/**
+ * 1) Using `getCarMake` function:
+ * - Accepts a `car` parameter of type `Car`.
+ * - Returns the make (brand) of the car.
+ * Example:
+ * getCarMake(cars[0]); // => "Toyota"
+ */
 function getCarMake(car: Car): string {
   // write your code here...
-  return "horse";
-}
-// console.log(getCarMake(cars[0])); // Outputs: Toyota
 
-// 2) Write a `isCarColorMatching` function that accepts `car` object and `color` string arguments, return true if the car's color matches the provided color, otherwise returns false
+  return ""; // replace empty string with what you see is fit
+}
+
+/**
+ * 2) Using `isCarColorMatching` function:
+ * - Accepts:
+ *   - A `car` parameter of type `Car`.
+ *   - A `color` parameter of type `string`.
+ * - Returns `true` if the car's color matches the provided color, otherwise returns `false`.
+ * Example:
+ * isCarColorMatching(cars[1], "Blue"); // => false
+ */
 function isCarColorMatching(car: Car, color: string): boolean {
   // write your code here...
-  return false;
-}
-// console.log(isCarColorMatching(cars[1], "Blue")); // Outputs: false
 
-// 3) Write a `addCar` function that accepts an array of car objects `cars` and the properties of a car,  create a new car object and add it to the array of cars, and return the updated array
+  return false; // replace false with what you see is fit
+}
+
+/**
+ * 3) Using `addCar` function:
+ * - Accepts:
+ *   - A `cars` array of type `Car[]`.
+ *   - An `id` parameter of type `number`..
+ *   - An `make` parameter of type `string`.
+ *   - An `model` parameter of type `string`.
+ *   - An `year` parameter of type `number`.
+ *   - An `color` parameter of type `string`.
+ * - Creates a new `Car` object and adds it to the end of the array `cars`.
+ * - Returns the updated array of `cars`.
+ * Example:
+ * addCar(cars, 407, "Kia", "Sorento", 2021, "Green");
+ * // => [
+ * //   { id: 401, make: "Toyota", model: "Camry", year: 2021, color: "Blue" },
+ * //   ...
+ * //   { id: 407, make: "Kia", model: "Sorento", year: 2021, color: "Green" }
+ * // ]
+ */
 function addCar(
   cars: Car[],
   id: number,
@@ -72,30 +105,66 @@ function addCar(
   color: string
 ): Car[] {
   // write your code here...
-  return [];
-}
-// console.log(addCar(cars, 406, "Kia", "Sorento", 2021, "Green"));
 
-// 4) Write a `countCarsMadeInYear` function that accepts an array cars objects `cars` and a manufacturing year `year` in numbers, return the number of cars made in the specified year
+  return []; // replace empty array with what you see is fit
+}
+
+/**
+ * 4) Using `countCarsMadeInYear` function:
+ * - Accepts:
+ *   - A `cars` array of type `Car[]`.
+ *   - A `year` parameter of type `number`.
+ * - Returns the number of cars made in the specified year.
+ * Example:
+ * countCarsMadeInYear(cars, 2020); // => 2
+ */
 function countCarsMadeInYear(cars: Car[], year: number): number {
   // write your code here...
-  return -Infinity;
-}
-// console.log(countCarsMadeInYear(cars, 2020)); // Outputs: 2
 
-// 5) Write a `removeCarById` function that accepts an array of cars objects `cars` and an `id` of number, remove the car with matching id from the array, and return the updated array.
+  return Infinity; // replace Infinity with what you see is fit
+}
+
+/**
+ * 5) Using `removeCarById` function:
+ * - Accepts:
+ *   - A `cars` array of type `Car[]`.
+ *   - An `id` parameter of type `number`.
+ * - Removes the car with the matching id from the array.
+ * - Returns the updated array.
+ * Example:
+ * removeCarById(cars, 403);
+ * // => Array without the car having id 403.
+ */
 function removeCarById(cars: Car[], id: number): Car[] {
   // write your code here...
-  return [];
-}
-// console.log(removeCarById(cars, 404));
 
-// 6) Write a `updateCarColor` function that accepts the following arguments: an array of car objects `cars`, an `id` (number) and a `newColor` (string), updates the color of the car with the given id to the new color. and return the updated car object. If no car is found with the given id, return "No Car Found".
-function updateCarColor(cars: Car[], id: number, newColor: string): Car {
-  // write your code here...
-  return cars[0];
+  return []; // replace empty array with what you see is fit
 }
-// console.log(updateCarColor(cars, 401, "Yellow"));
+
+/**
+ * 6) Using `updateCarColor` function:
+ * - Accepts:
+ *   - A `cars` array of type `Car[]`.
+ *   - An `id` parameter of type `number`.
+ *   - A `newColor` parameter of type `string`.
+ * - If found, updates the color of the car with the given id to the new color.
+ * - Returns the updated car object.
+ * - If no car is found with the given id, return `"No Car Found"`.
+ * Example:
+ * updateCarColor(cars, 401, "Yellow");
+ * // => { id: 401, make: "Toyota", model: "Camry", year: 2021, color: "Yellow" }
+ * updateCarColor(cars, 420, "Green");
+ * // => "No Car Found"
+ */
+function updateCarColor(
+  cars: Car[],
+  id: number,
+  newColor: string
+): Car | "No Car Found" {
+  // write your code here...
+
+  return "No Car Found"; // replace "No Car Found" with what you see is fit
+}
 
 export {
   Car,
